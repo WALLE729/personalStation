@@ -11,7 +11,9 @@ class Listhome extends React.Component{
 		return <div>
 		我是插入在homehtml页面中的文件啊
 		我在测试这个组件，创建新组建，首字母要大写，TMDTMD，一定记清楚啦，组件的首字母要大写
-		<img src={img1}/>
+		<img src={img1}/><br/>
+		这才是热加载测试
+
 		</div>
 	}
 }
