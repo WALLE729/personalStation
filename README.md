@@ -21,3 +21,5 @@
 ##如果要增加页面
 	记得在entry（入口文件处，添加相应的js文件）
 	还有就是使用new HtmlWebpackPlugin，渲染出相应的页面
+	
+##此处一个小小的问题，npm install结束之后可以先删除掉public文件夹，再执行编译命令
