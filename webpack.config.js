@@ -15,7 +15,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports={
 	//entry:'./entry.js',配置入口文件，有几个写几个{index: './src/js/page/index.js',list: './src/js/page/list.js'}
 	entry:{
-		// index:"./dev/js/page/index.js",
+		index:"./dev/js/page/index.js",
 		reactDemo:"./dev/js/page/reactDemo.js",
 		home:"./dev/js/page/home.js"
 	},
@@ -90,19 +90,19 @@ module.exports={
             minChunks: 2 // 提取至少3个模块共有的部分
         }),
 
-        //HtmlWebpackPlugin，模板生成相关的配置，每个对于一个页面的配置，有几个写几个
-        // new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
-        //     // favicon: './dev/img/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
-        //     filename: './view/index.html', //生成的html存放路径，相对于path
-        //     template: './dev/view/index.html', //html模板路径 相对于webpack.config.js文件的路径
-        //     inject: 'body', //js插入的位置，true/'head'/'body'/false
-        //     hash: true, //为静态资源生成hash值
-        //     chunks: ['vendors', 'index'],//需要引入的chunk，不配置就会引入所有页面的资源
-        //     minify: { //压缩HTML文件    
-        //         removeComments: true, //移除HTML中的注释
-        //         collapseWhitespace: false //删除空白符与换行符
-        //     }
-        // }),
+        // HtmlWebpackPlugin，模板生成相关的配置，每个对于一个页面的配置，有几个写几个
+        new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
+            // favicon: './dev/img/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
+            filename: './view/index.html', //生成的html存放路径，相对于path
+            template: './dev/view/index.html', //html模板路径 相对于webpack.config.js文件的路径
+            inject: 'body', //js插入的位置，true/'head'/'body'/false
+            hash: true, //为静态资源生成hash值
+            chunks: ['vendors', 'index'],//需要引入的chunk，不配置就会引入所有页面的资源
+            minify: { //压缩HTML文件    
+                removeComments: true, //移除HTML中的注释
+                collapseWhitespace: false //删除空白符与换行符
+            }
+        }),
          new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
             // favicon: './dev/img/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
             filename: './view/reactDemo.html', //生成的html存放路径，相对于path
